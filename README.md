@@ -1,2 +1,3 @@
-# expo-template-tabs-javascript
-Starter tabs template for expo react native app in JavaScript.
+Mobile add on app to Power Time Tracking (github.com/shoryamalani/PowerTimeTracking)
+
+its all coming together...
