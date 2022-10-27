@@ -10,22 +10,26 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 
 const BottomTab = createBottomTabNavigator();
 
-export default function BottomTabNavigator() {
+export default function BottomTabNavigator({peer2peer}) {
 	const colorScheme = useColorScheme();
+	console.log('BottomTabNavigator peer2peer', peer2peer);
 
 	return (
 		<BottomTab.Navigator
 			initialRouteName='TabOne'
-			screenOptions={{"tabBarActiveTintColor": "#fff","tabBarStyle": [{"display": "flex"},null]}}
+			screenOptions={{"tabBarActiveTintColor": "#000","tabBarStyle": [{"display": "flex"},null]}}
 		>
 			<BottomTab.Screen
 				name='TabOne'
-				component={TabOneNavigator}
+				component={TabOneNavigator }
+				data={peer2peer= peer2peer}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon name='ios-code' color={color} />
-					),
+					)
 				}}
+				
+				
 			/>
 			<BottomTab.Screen
 				name='TabTwo'
@@ -50,13 +54,14 @@ function TabBarIcon(props) {
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator();
 
-function TabOneNavigator() {
+function TabOneNavigator({peer2peer}) {
+	console.log('TabOneNavigator peer2peer', peer2peer);
 	return (
 		<TabOneStack.Navigator>
 			<TabOneStack.Screen
 				name='TabOneScreen'
 				component={TabOneScreen}
-				options={{ headerTitle: 'Tab One Title' }}
+				options={{ headerTitle: 'Tab One Title' , peer2peer: peer2peer}}
 			/>
 		</TabOneStack.Navigator>
 	);

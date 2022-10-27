@@ -40,7 +40,7 @@ export default function EditScreenInfo({ path }) {
 				<TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
 					<Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
 						Tap here if your app doesn't automatically update after making
-						changes
+						changes {}
 					</Text>
 				</TouchableOpacity>
 			</View>
